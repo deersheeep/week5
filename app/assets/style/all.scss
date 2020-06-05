@@ -1,9 +1,7 @@
-@import "functions";
-@import "./helpers/variables";
-@import "bootstrap";
+$link-hover-color :#2A8356;
+$bgcolor :#EDF4EE;
 
-$color {color:#2A8356;}
-$bgcolor {color:#EDF4EE;}
+@import "bootstrap";
 
 html,
 body {
@@ -17,5 +15,6 @@ body {
 }
 //左側選單
 .sidebar {
-    background-color: $bgcolor;
+    /*background-color: $bgcolor;*/
 }
+
