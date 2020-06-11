@@ -1,8 +1,18 @@
-$link-hover-color :#2A8356;
-$bgcolor :#EDF4EE;
+//
+// mixin
+//
+@mixin userimg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
 
+/*@import "mixins";*/
+/*@import "./helpers/variables";*/
+@import "variables";
 @import "bootstrap";
 
+//
 html,
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -13,8 +23,103 @@ body {
     font-size: 16px;
     line-height: 1.5;
 }
-//左側選單
-.sidebar {
-    /*background-color: $bgcolor;*/
+
+.vh-100 {
+    height: 100vh;
 }
 
+a {
+    color: #121212;
+
+    &:hover {
+        color: primary-dark;
+    }
+}
+
+ul {
+    list-style: none;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+code {
+    color: $primary-dark;
+    background-color: $primary;
+    padding: 0 4px;
+}
+
+.wrap {
+    padding: 0 32px 32px 32px;
+}
+.border-bottom {
+    border-bottom: 1px solid $primary-border;
+}
+//左側選單
+.sidebar {
+    padding: 32px 0 32px 32px;
+    background-color: $primary;
+    min-width: 296px;
+
+    li {
+        font-weight: 600;
+        margin-bottom: 26px;
+
+        span {
+            width: 24px;
+            margin-right: 1rem;
+        }
+    }
+
+    .user {
+        img {
+            margin-right: 1rem;
+            @include userimg
+        }
+
+        h5 {
+            font-size: 1rem;
+
+            span {
+                color: rgba(0, 0, 0, 0.6);
+                font-size: 14px;
+                font-weight: normal;
+            }
+        }
+    }
+}
+//comment
+.commentList {
+    .dropdown .btn {
+        padding: 0;
+        margin-bottom: 8px;
+    }
+}
+.comment > p:first-child {
+    color: #707070;
+    margin-bottom: 8px;
+    font-size: 12px;
+    line-height: 24px;    
+}
+//tool
+.tool {
+    li:last-child {
+        .btn {
+            padding: 8px 32px;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            color: #ffffff;
+            background-color: $primary-dark;
+            border-color: $primary-dark;
+            margin-left: 1rem;
+        }
+
+        .btn-outline-primary,
+        .btn-outline-primary:not(:disabled):not(.disabled):active {
+            color: $primary-dark;
+            background-color: #ffffff;
+            border-color: $primary-dark;
+        }
+    }
+}
